@@ -6,7 +6,7 @@ export async function logoutAction (){
     deleteItem({
         key: "userName",
     })
-    toast.success("You've successfully deleted the account!")
+    toast.success("You've deleted the account!")
 
     return redirect("/")
 }
