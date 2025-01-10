@@ -1,6 +1,6 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import DashBoard, { dashboardLoader } from "./components/DashBoard/DashBoard";
+import DashBoard, { dashboardAction, dashboardLoader } from "./components/DashBoard/DashBoard";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
@@ -20,6 +20,7 @@ const router = createBrowserRouter([
         index: true,
         element: <DashBoard />,
         loader: dashboardLoader,
+        action: dashboardAction,
         errorElement: <ErrorPage />,
       },
       {
