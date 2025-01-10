@@ -1,3 +1,5 @@
+const wait = () => new Promise(res => setTimeout(res, Math.random() * 2000))
+
 const generateRandomColor = () => {
     const existingBudgetLength = fetchData("budgets")?.
     length ?? 0;
@@ -24,4 +26,4 @@ const deleteItem = ({key}) => {
     return localStorage.removeItem(key)
 }
 
-export { fetchData, deleteItem, createBudget };
+export { fetchData, deleteItem, createBudget, wait };
