@@ -331,6 +331,7 @@ nav a {
   }
 }
 
+
 /* forms */
 label {
   font-size: var(--fs-300);
@@ -405,9 +406,9 @@ select {
 /* dashboard */
 .dashboard {
   display: -ms-grid;
+  place-items: start;
   display: grid;
   gap: var(--space-lg);
-  place-items: start;
   width: 100%;
 }
 
@@ -448,12 +449,13 @@ select {
   gap: var(--space-md);
 }
 
-@media screen and (max-width: 725px) {
+@media screen and (max-width: 725px){
   .expense-inputs {
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
   }
 }
+
 
 /* budgets */
 .budgets {
