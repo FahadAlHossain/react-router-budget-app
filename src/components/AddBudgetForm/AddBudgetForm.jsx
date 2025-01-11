@@ -1,6 +1,6 @@
 import { CurrencyDollarIcon } from "@heroicons/react/24/solid";
 import { useEffect, useRef } from "react";
-import {  useFetcher } from "react-router-dom";
+import { useFetcher } from "react-router-dom";
 
 const AddBudgetForm = () => {
   const fetcher = useFetcher();
@@ -31,6 +31,7 @@ const AddBudgetForm = () => {
           />
         </div>
         <div className="grid-xs">
+          <label htmlFor="newBudgetAmount">Amount</label>
           <input
             type="number"
             name="newBudgetAmount"
