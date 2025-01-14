@@ -2,6 +2,7 @@ import { Link, useLoaderData } from "react-router-dom";
 import {
   createBudget,
   createExpense,
+  deleteItem,
   fetchData,
   wait,
 } from "../../utilities/localStorage";
@@ -55,6 +56,17 @@ export async function dashboardAction({ request }) {
       return toast.success("Budget created!");
     } catch (e) {
       throw new Error("There was a problem creating your budget.", e);
+    }
+  }
+  if (_action === "deleteExpense") {
+    try {
+      deleteItem({
+        key: "expenses",
+        id: values.expenseId
+      });
+      return toast.success("Expense deleted!");
+    } catch (e) {
+      throw new Error("There was a problem deleting your expense.", e);
     }
   }
 }

@@ -2,12 +2,13 @@ import PropTypes from "prop-types";
 import ExpenseItem from "../ExpenseItem/ExpenseItem";
 
 const Table = ({ expenses }) => {
+  
   return (
     <div className="table">
       <table>
         <thead>
           <tr>
-            {["Name", "Amount", "Date"].map((i, idx) => (
+            {["Name", "Amount", "Date","Budget",""].map((i, idx) => (
               <th key={idx}>{i}</th>
             ))}
           </tr>
