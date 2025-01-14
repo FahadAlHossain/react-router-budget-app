@@ -19,7 +19,7 @@ This is a budget management application built with React, React Router, and Vite
 
 Here’s a preview of the application:
 
-![Budget App Screenshot](.src/assets/budget-app-preview.jpeg)
+![Budget App Screenshot](./assets/budget-app-preview.jpeg)
 
 
 ---
