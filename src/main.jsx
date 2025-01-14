@@ -1,14 +1,20 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import DashBoard, { dashboardAction, dashboardLoader } from "./components/DashBoard/DashBoard";
+import DashBoard, {
+  dashboardAction,
+  dashboardLoader,
+} from "./components/DashBoard/DashBoard";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ErrorPage from "./components/ErrorPage/ErrorPage";
 import Main, { mainLoader } from "./components/Main/Main";
 import { logoutAction } from "./utilities/logout";
-import { ToastContainer } from 'react-toastify';
-import Expenses, { expensesAction, expensesLoader } from "./components/Expenses/Expenses";
-
+import { ToastContainer } from "react-toastify";
+import Expenses, {
+  expensesAction,
+  expensesLoader,
+} from "./components/Expenses/Expenses";
+import Budget, { budgetAction, budgetLoader } from "./components/Budget/Budget";
 
 const router = createBrowserRouter([
   {
@@ -28,19 +34,29 @@ const router = createBrowserRouter([
         path: "/expenses",
         element: <Expenses />,
         loader: expensesLoader,
-        action: expensesAction
+        action: expensesAction,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: "/budget/:id",
+        element: <Budget />,
+        loader: budgetLoader,
+        action: budgetAction,
+        errorElement: <ErrorPage />,
       },
       {
         path: "/logout",
         action: logoutAction,
-      }
+      },
     ],
   },
 ]);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <RouterProvider router={router} />
-    <ToastContainer/>
+    <div className="App">
+      <RouterProvider router={router} />
+      <ToastContainer />
+    </div>
   </StrictMode>
 );
